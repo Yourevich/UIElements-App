@@ -11,19 +11,29 @@ class ButtonController: UIViewController {
     
         let button: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .systemBlue
-        button.setTitle("Открыть контроллер", for: .normal)
-        button.layer.cornerRadius = 7
+//        button.backgroundColor = .systemBlue
+//        button.setTitle("New colore 🌈", for: .normal)
+//        button.layer.cornerRadius = 7
+            button.configuration = .tinted()
+            button.configuration?.title = "New colore 🌈"
         return button
             
     }()
-                        
+    
+    let colorMix: [UIColor] = [
+        UIColor.red,
+        UIColor.green,
+        UIColor.blue,
+        UIColor.yellow,
+        UIColor.orange,
+    ]
+    
+                
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
-        self.view.backgroundColor = .orange
+        view.backgroundColor = .white
+        
         setupUI()
-        title = "ViewController"
     }
     
     
@@ -46,8 +56,8 @@ class ButtonController: UIViewController {
 
     @objc func didTupAction() {
         
-        let vc = MainViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+      
+            view.backgroundColor = colorMix.randomElement()
         
     }
     

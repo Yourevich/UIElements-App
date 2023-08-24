@@ -8,22 +8,37 @@
 import UIKit
 
 class SliderController: UIViewController {
-
+    
+    
+    let slider = UISlider(frame: CGRect(x: 40, y: 200, width: 300, height: 100))
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        setupSlider()
+        view.addSubview(slider)
+        
+        
     }
     
+    
+    func setupSlider() {
+           view.addSubview(slider)
+           slider.translatesAutoresizingMaskIntoConstraints = false
+           
+           NSLayoutConstraint.activate([
+               slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+               slider.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+               slider.widthAnchor.constraint(equalToConstant: 300),
+               slider.heightAnchor.constraint(equalToConstant: 100)
+           ])
+       }
+    
+   
+    
+    
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
