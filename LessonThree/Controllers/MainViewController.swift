@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-//Create instance for UIElements
+//Create instance for UI
     
     let tableView = UITableView()
     let uiItems: [TypeOfUi] = [.Button, .Slider, .Switch, .UILabel, .UIImageView, .UIActivityIndicatorView, .UITextView, .UITextField, .UISegmentedControl]
@@ -48,6 +48,9 @@ class MainViewController: UIViewController {
         setupLabelOfTable()
     }
 
+    
+    // Setup of Text label
+    
     func setupLabelOfTable() {
         view.addSubview(tableLabel)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,6 +61,8 @@ class MainViewController: UIViewController {
         ])
     }
     
+    
+    // Setup for tableview
     
     func setupTableView() {
         view.addSubview(tableView)
@@ -76,9 +81,12 @@ class MainViewController: UIViewController {
 // Extension for conforming protocols UITableView
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return uiItems.count
     }
+    
+    // Func of conforming protocol
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -108,6 +116,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 
+    // Func of conforming protocol
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch uiItems[indexPath.row] {
             
@@ -132,12 +142,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case.UISegmentedControl:
             let segmentController = SegmentedControlController()
             navigationController?.pushViewController(segmentController, animated: true)
-        default:
-            break
-
+        case.UITextField:
+            let textFieldController = TextFieldController()
+            navigationController?.pushViewController(textFieldController, animated: true)
+        case.UITextView:
+            let textViewcontroller = TextViewController()
+            navigationController?.pushViewController(textViewcontroller, animated: true)
             }
         }
     
+    // The function sets the color value of the cells when clicked
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let selectedView = UIView()
