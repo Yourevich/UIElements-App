@@ -18,26 +18,35 @@ class ActivitiIndicatorController: UIViewController {
     return button
         
 }()
+    
+    // Init variable to save the current state
+    
     var isAnimating = false
+    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        spinner.hidesWhenStopped = false
         setupButton()
         setupIndicator()
         
     }
     
+    // Setup for indicator
+    
     func setupIndicator() {
         
         spinner.translatesAutoresizingMaskIntoConstraints = false
+        spinner.hidesWhenStopped = false
         view.addSubview(spinner)
         spinner.stopAnimating()
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     
     }
+    
+    // Setup for button
     
     func setupButton() {
         
@@ -59,13 +68,12 @@ class ActivitiIndicatorController: UIViewController {
     @objc func startOfIndicator() {
         
         if spinner.isAnimating == true {
-                    spinner.stopAnimating()
-                    button.configuration?.title = "Start animation 💿"
-                } else {
-                    spinner.startAnimating()
-                    button.configuration?.title = "Stop animation 🛑"
+                spinner.stopAnimating()
+                button.configuration?.title = "Start animation 💿"
+                    } else {
+                        spinner.startAnimating()
+                        button.configuration?.title = "Stop animation 🛑"
                 }
     }
-    
     
 }

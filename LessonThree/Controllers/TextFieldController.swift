@@ -8,22 +8,46 @@
 import UIKit
 
 class TextFieldController: UIViewController {
+    
+    let textFieldOfNumber = UITextField()
+    let textFieldOfPassword = UITextField()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemTeal
+        setupTextField()
+        
     }
     
+    // Setup of TextField
+    
+    func setupTextField() {
+        textFieldOfNumber.translatesAutoresizingMaskIntoConstraints = false
+        textFieldOfNumber.placeholder = "Введите номер"
+        textFieldOfNumber.borderStyle = .roundedRect
+        textFieldOfNumber.keyboardType = .phonePad
+        view.addSubview(textFieldOfNumber)
+    
+        NSLayoutConstraint.activate([
+            textFieldOfNumber.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textFieldOfNumber.centerYAnchor.constraint(equalTo: view.centerYAnchor)
 
-    /*
-    // MARK: - Navigation
+        ])
+        
+        textFieldOfPassword.translatesAutoresizingMaskIntoConstraints = false
+        textFieldOfPassword.placeholder = "Введите пароль"
+        textFieldOfPassword.isSecureTextEntry = true
+        textFieldOfPassword.borderStyle = .roundedRect
+        textFieldOfPassword.keyboardType = .default
+        view.addSubview(textFieldOfPassword)
+    
+        NSLayoutConstraint.activate([
+            textFieldOfPassword.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textFieldOfPassword.topAnchor.constraint(equalTo: textFieldOfNumber.bottomAnchor,constant: 20)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        ])
+    
     }
-    */
 
 }

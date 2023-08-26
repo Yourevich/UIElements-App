@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Enum with value of all controllers
+
 enum TypeOfUi {
     
     case Button

@@ -13,6 +13,8 @@
 		4D1CBA0A2A96B07000BA6DD4 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA092A96B07000BA6DD4 /* ImageController.swift */; };
 		4D1CBA0C2A97058700BA6DD4 /* ActivitiIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA0B2A97058700BA6DD4 /* ActivitiIndicatorController.swift */; };
 		4D1CBA0E2A970B6A00BA6DD4 /* SegmentedControlController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA0D2A970B6A00BA6DD4 /* SegmentedControlController.swift */; };
+		4D1CBA102A97A72600BA6DD4 /* TextFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA0F2A97A72600BA6DD4 /* TextFieldController.swift */; };
+		4D1CBA122A97AFB100BA6DD4 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA112A97AFB100BA6DD4 /* TextViewController.swift */; };
 		4D35B6C12A90B2E10043A33A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B6C02A90B2E10043A33A /* AppDelegate.swift */; };
 		4D35B6C32A90B2E10043A33A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B6C22A90B2E10043A33A /* SceneDelegate.swift */; };
 		4D35B6C52A90B2E10043A33A /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B6C42A90B2E10043A33A /* ButtonController.swift */; };
@@ -30,6 +32,8 @@
 		4D1CBA092A96B07000BA6DD4 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		4D1CBA0B2A97058700BA6DD4 /* ActivitiIndicatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiIndicatorController.swift; sourceTree = "<group>"; };
 		4D1CBA0D2A970B6A00BA6DD4 /* SegmentedControlController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlController.swift; sourceTree = "<group>"; };
+		4D1CBA0F2A97A72600BA6DD4 /* TextFieldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldController.swift; sourceTree = "<group>"; };
+		4D1CBA112A97AFB100BA6DD4 /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		4D35B6BD2A90B2E10043A33A /* LessonThree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LessonThree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D35B6C02A90B2E10043A33A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D35B6C22A90B2E10043A33A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		4D7C9B822A9460DB001540FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D1CBA112A97AFB100BA6DD4 /* TextViewController.swift */,
+				4D1CBA0F2A97A72600BA6DD4 /* TextFieldController.swift */,
 				4D1CBA0D2A970B6A00BA6DD4 /* SegmentedControlController.swift */,
 				4D1CBA0B2A97058700BA6DD4 /* ActivitiIndicatorController.swift */,
 				4D1CBA092A96B07000BA6DD4 /* ImageController.swift */,
@@ -195,8 +201,10 @@
 				4D1CBA0A2A96B07000BA6DD4 /* ImageController.swift in Sources */,
 				4D1CBA002A95418500BA6DD4 /* SwitchController.swift in Sources */,
 				4D7C9B872A951AAA001540FF /* SliderController.swift in Sources */,
+				4D1CBA102A97A72600BA6DD4 /* TextFieldController.swift in Sources */,
 				4D35B6C32A90B2E10043A33A /* SceneDelegate.swift in Sources */,
 				4D1CBA0E2A970B6A00BA6DD4 /* SegmentedControlController.swift in Sources */,
+				4D1CBA122A97AFB100BA6DD4 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

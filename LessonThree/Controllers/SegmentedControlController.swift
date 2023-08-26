@@ -21,6 +21,8 @@ class SegmentedControlController: UIViewController {
     }
     
     
+    // Setup of SegmentedControl
+    
     func setupController() {
         controller.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(controller)
@@ -44,6 +46,8 @@ class SegmentedControlController: UIViewController {
             label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 40),
         ])
     }
+    
+    // Function setting action for segmented controll
     
     @objc func switchText() {
         switch controller.selectedSegmentIndex {

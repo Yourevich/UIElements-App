@@ -17,9 +17,6 @@ class SliderController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupSlider()
-        view.addSubview(slider)
-        
-        
     }
     
     

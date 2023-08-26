@@ -8,22 +8,34 @@
 import UIKit
 
 class TextViewController: UIViewController {
-
+    
+    let textView = UITextView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        setupTextView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // Setup of TextView
+    
+    func setupTextView() {
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = UIColor.systemGray5
+        textView.font = UIFont(name: "Futura", size: 100)
+        textView.text = "this text cannot be deleted or copied 👺"
+        textView.isEditable = false
+        textView.isSelectable = false
+        
+        view.addSubview(textView)
+    
+        
+        NSLayoutConstraint.activate([
+                    textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                    textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                    textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                    textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+                ])
+        
     }
-    */
-
 }

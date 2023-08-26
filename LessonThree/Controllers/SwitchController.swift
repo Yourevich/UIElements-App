@@ -16,24 +16,22 @@ class SwitchController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupSwitch()
-        UiSwitch.isOn = false
-        UiSwitch.addTarget(self, action: #selector(tupOnSwitch), for: .touchUpInside)
+       
     }
     
-
+    // Setup for Switch
+    
     func setupSwitch() {
         view.addSubview(UiSwitch)
+        UiSwitch.isOn = false
+        UiSwitch.addTarget(self, action: #selector(tupOnSwitch), for: .touchUpInside)
         UiSwitch.translatesAutoresizingMaskIntoConstraints = false
             NSLayoutConstraint.activate([
                 UiSwitch.centerYAnchor.constraint(equalTo: view.centerYAnchor),
                 UiSwitch.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-                
         ])
     
     }
-    
-    
-    
     
     @objc func tupOnSwitch() {
         
@@ -42,11 +40,8 @@ class SwitchController: UIViewController {
             
         } else {
             
-            
             view.backgroundColor = .black
         }
-        
-        
-        
+    
     }
 }

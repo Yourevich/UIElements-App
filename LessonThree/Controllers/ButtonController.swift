@@ -11,16 +11,15 @@ class ButtonController: UIViewController {
     
         let button: UIButton = {
         let button = UIButton()
-//        button.backgroundColor = .systemBlue
-//        button.setTitle("New colore 🌈", for: .normal)
-//        button.layer.cornerRadius = 7
             button.configuration = .tinted()
             button.configuration?.title = "New colore 🌈"
         return button
-            
     }()
     
+    // Create array of colores
+    
     let colorMix: [UIColor] = [
+        
         UIColor.red,
         UIColor.green,
         UIColor.blue,

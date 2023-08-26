@@ -16,6 +16,10 @@ class LabelController: UIViewController {
         
         view.backgroundColor = .systemMint
         configLabel()
+      
+        
+        // Setup for label
+        
         func configLabel() {
             
             view.addSubview(label)
