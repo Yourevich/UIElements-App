@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     
 //Create instance for UI
     
-    let tableView = UITableView()
+    let tableView = UITableView(frame: CGRect.zero, style: .insetGrouped)
     let uiItems: [TypeOfUi] = [.Button, .Slider, .Switch, .UILabel, .UIImageView, .UIActivityIndicatorView, .UITextView, .UITextField, .UISegmentedControl]
     
     let tableLabel: UILabel = {
@@ -22,17 +22,6 @@ class MainViewController: UIViewController {
         return label
     }()
     
-// Update the default cell color when the view is displayed
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//            super.viewWillAppear(animated)
-//
-//            tableView.indexPathsForSelectedRows?.forEach { indexPath in
-//                tableView.deselectRow(at: indexPath, animated: false)
-//            }
-//
-//        }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemGray5
@@ -42,10 +31,13 @@ class MainViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.layer.cornerRadius = 20
-        tableView.isScrollEnabled = false
+//        tableView.layer.cornerRadius = 20
+        tableView.isScrollEnabled = true
         setupTableView()
-        setupLabelOfTable()
+        
+        title = "Обновление 1.0"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
 
     
@@ -69,11 +61,17 @@ class MainViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+//            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+//            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+//////            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+//            tableView.heightAnchor.constraint(equalToConstant: 450)
+            
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
 ////            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-            tableView.heightAnchor.constraint(equalToConstant: 450)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
@@ -81,6 +79,10 @@ class MainViewController: UIViewController {
 // Extension for conforming protocols UITableView
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return uiItems.count
@@ -149,15 +151,33 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let textViewcontroller = TextViewController()
             navigationController?.pushViewController(textViewcontroller, animated: true)
             }
-        tableView.deselectRow(at: indexPath, animated: false)
+            tableView.deselectRow(at: indexPath, animated: false)
         }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "UI Elements"
+            
+        default:
+            return nil
+        }
+    }
     
     // The function sets the color value of the cells when clicked
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let selectedView = UIView()
-        selectedView.backgroundColor = UIColor(red: 1, green: 0.4039, blue: 0.349, alpha: 1.0)
-        cell.selectedBackgroundView = selectedView
-    }
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        let selectedView = UIView()
+//        selectedView.backgroundColor = UIColor(red: 1, green: 0.4039, blue: 0.349, alpha: 1.0)
+//        cell.selectedBackgroundView = selectedView
+//    }
+    
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "UIElements \(section)"
+//    }
+
+    
     
 }
