@@ -24,14 +24,14 @@ class MainViewController: UIViewController {
     
 // Update the default cell color when the view is displayed
     
-    override func viewWillAppear(_ animated: Bool) {
-            super.viewWillAppear(animated)
-            
-            tableView.indexPathsForSelectedRows?.forEach { indexPath in
-                tableView.deselectRow(at: indexPath, animated: false)
-            }
-    
-        }
+//    override func viewWillAppear(_ animated: Bool) {
+//            super.viewWillAppear(animated)
+//
+//            tableView.indexPathsForSelectedRows?.forEach { indexPath in
+//                tableView.deselectRow(at: indexPath, animated: false)
+//            }
+//
+//        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,6 +149,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             let textViewcontroller = TextViewController()
             navigationController?.pushViewController(textViewcontroller, animated: true)
             }
+        tableView.deselectRow(at: indexPath, animated: false)
         }
     
     // The function sets the color value of the cells when clicked
