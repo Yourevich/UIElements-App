@@ -9,7 +9,7 @@ import Foundation
 
 // Enum with value of all controllers
 
-enum TypeOfUi {
+enum TypeOfUi: CaseIterable {
     
     case Button
     case Slider
@@ -20,8 +20,12 @@ enum TypeOfUi {
     case UITextField
     case UITextView
     case UISegmentedControl
+
 }
 
-
-
-
+enum ClassOfUI: CaseIterable {
+    
+       case UIControl
+       case UIScrollView
+       case UIView
+   }
