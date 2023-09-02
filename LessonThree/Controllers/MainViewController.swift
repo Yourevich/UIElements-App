@@ -12,15 +12,6 @@ class MainViewController: UIViewController {
 //Create instance for UI
     
     let tableView = UITableView(frame: CGRect.zero, style: .insetGrouped)
-    let uiItems: [TypeOfUi] = [.Button, .Slider, .Switch, .UILabel, .UIImageView, .UIActivityIndicatorView, .UITextView, .UITextField, .UISegmentedControl]
-    
-    let tableLabel: UILabel = {
-       let label = UILabel()
-        label.text = "UI Elements"
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,24 +26,10 @@ class MainViewController: UIViewController {
         tableView.isScrollEnabled = true
         setupTableView()
         
-        title = "Обновление 1.0"
+        title = "Table of UI elements"
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }
-
-    
-    // Setup of Text label
-    
-    func setupLabelOfTable() {
-        view.addSubview(tableLabel)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            tableLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            tableLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant:  30),
-            tableLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
-        ])
-    }
-    
     
     // Setup for tableview
     
@@ -61,16 +38,9 @@ class MainViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-//            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
-//            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-//            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
-//////            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
-//            tableView.heightAnchor.constraint(equalToConstant: 450)
-            
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-////            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
@@ -81,11 +51,20 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return ClassOfUI.allCases.count
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return uiItems.count
+    
+        switch ClassOfUI.allCases[section] {
+        case .UIView:
+            return 3
+        case .UIControl:
+            return 5
+        case .UIScrollView:
+            return 1
+        }
+
     }
     
     // Func of conforming protocol
@@ -94,90 +73,126 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.textAlignment = .left
         cell.accessoryType = .disclosureIndicator
-        cell.selectedBackgroundView?.backgroundColor = UIColor.blue
-        switch uiItems[indexPath.row] {
-        case .Button:
-            cell.textLabel?.text = "UIButton"
-        case .Slider:
-            cell.textLabel?.text = "UISlider"
-        case .Switch:
-            cell.textLabel?.text = "UISwitch"
-        case .UILabel:
-            cell.textLabel?.text = "UILabel"
-        case .UIActivityIndicatorView:
-            cell.textLabel?.text = "UIActivityIndicatorView"
-        case .UIImageView:
-            cell.textLabel?.text = "UIImageView"
-        case .UITextField:
-            cell.textLabel?.text = "UITextField"
-        case .UITextView:
-            cell.textLabel?.text = "UITextView"
-        case .UISegmentedControl:
-            cell.textLabel?.text = "UISegmentedControl"
-        }
-        return cell
+        
+        switch indexPath.section {
+           case 0:
+               // Секция UIControl
+               switch indexPath.row {
+               case 0:
+                   cell.textLabel?.text = "UIButton"
+               case 1:
+                   cell.textLabel?.text = "UISlider"
+               case 2:
+                   cell.textLabel?.text = "UISwitch"
+               case 3:
+                   cell.textLabel?.text = "UITextField"
+               case 4:
+                   cell.textLabel?.text = "UISegmentedControl"
+               default:
+                   break
+               }
+           case 1:
+               // Секция UIScrollView
+               if indexPath.row == 0 {
+                   cell.textLabel?.text = "UITextView"
+               }
+           case 2:
+               // Секция UIView
+               switch indexPath.row {
+               case 0:
+                   cell.textLabel?.text = "UILabel"
+               case 1:
+                   cell.textLabel?.text = "UIImageView"
+               case 2:
+                   cell.textLabel?.text = "UIActivityIndicatorView"
+               default:
+                   break
+               }
+           default:
+               break
+           }
+
+           return cell
     }
 
     // Func of conforming protocol
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch uiItems[indexPath.row] {
+        
+        switch indexPath.section {
+           case 0:
+               // Секция UIControl
             
-        case .Button:
-            let buttonViewController = ButtonController()
-            navigationController?.pushViewController(buttonViewController, animated: true)
-        case .Slider:
-            let slidercontroller = SliderController()
-            navigationController?.pushViewController(slidercontroller, animated: true)
-        case.Switch:
-            let switchController = SwitchController()
-            navigationController?.pushViewController(switchController, animated: true)
-        case.UILabel:
-            let labelController = LabelController()
-            navigationController?.pushViewController(labelController, animated: true)
-        case.UIImageView:
-            let imageController = ImageController()
-            navigationController?.pushViewController(imageController, animated: true)
-        case.UIActivityIndicatorView:
-            let activitiIndicatorController = ActivitiIndicatorController()
-            navigationController?.pushViewController(activitiIndicatorController, animated: true)
-        case.UISegmentedControl:
-            let segmentController = SegmentedControlController()
-            navigationController?.pushViewController(segmentController, animated: true)
-        case.UITextField:
-            let textFieldController = TextFieldController()
-            navigationController?.pushViewController(textFieldController, animated: true)
-        case.UITextView:
-            let textViewcontroller = TextViewController()
-            navigationController?.pushViewController(textViewcontroller, animated: true)
-            }
+               switch indexPath.row {
+               case 0:
+                   let buttonViewController = ButtonController()
+                   navigationController?.pushViewController(buttonViewController, animated: true)
+               case 1:
+                   let slidercontroller = SliderController()
+                   navigationController?.pushViewController(slidercontroller, animated: true)
+               case 2:
+                   let switchController = SwitchController()
+                   navigationController?.pushViewController(switchController, animated: true)
+               case 3:
+                   let textFieldController = TextFieldController()
+                   navigationController?.pushViewController(textFieldController, animated: true)
+               case 4:
+                   let segmentedController = SegmentedControlController()
+                   navigationController?.pushViewController(segmentedController, animated: true)
+               default:
+                   break
+               }
+           case 1:
+            
+               // Секция UIScrollView
+               if indexPath.row == 0 {
+                   let textViewcontroller = TextViewController()
+                   navigationController?.pushViewController(textViewcontroller, animated: true)
+               }
+           case 2:
+            
+               // Секция UIView
+               switch indexPath.row {
+               case 0:
+                   let labelController = LabelController()
+                   navigationController?.pushViewController(labelController, animated: true)
+               case 1:
+                   let imageController = ImageController()
+                   navigationController?.pushViewController(imageController, animated: true)
+               case 2:
+                   let activityIndicatorController = ActivitiIndicatorController()
+                   navigationController?.pushViewController(activityIndicatorController, animated: true)
+               default:
+                   break
+               }
+            
+            
+           default:
+               break
+           }
+        
+        
             tableView.deselectRow(at: indexPath, animated: false)
         }
     
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       
         switch section {
+
         case 0:
-            return "UI Elements"
-            
+            return "UIControl"
+        case 1:
+            return "UIScrollView"
+        case 2:
+            return "UIView"
         default:
             return nil
         }
+
     }
-    
-    // The function sets the color value of the cells when clicked
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        let selectedView = UIView()
-//        selectedView.backgroundColor = UIColor(red: 1, green: 0.4039, blue: 0.349, alpha: 1.0)
-//        cell.selectedBackgroundView = selectedView
-//    }
-    
-    
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return "UIElements \(section)"
-//    }
 
     
-    
+
 }
+
