@@ -9,6 +9,10 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+ // Create searchController
+    
+let searchController = UISearchController(searchResultsController: nil)
+
 //Create instance for UI
     
     let tableView = UITableView(frame: CGRect.zero, style: .insetGrouped)
@@ -22,11 +26,13 @@ class MainViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.layer.cornerRadius = 20
-        tableView.isScrollEnabled = true
         setupTableView()
         
-        title = "Table of UI elements"
+        //Confifure search
+        navigationItem.searchController = searchController
+        
+        //Config navig.title
+        navigationItem.title = "Table of UI elements"
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }
@@ -36,6 +42,7 @@ class MainViewController: UIViewController {
     func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isScrollEnabled = true
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -111,6 +118,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
            default:
                break
            }
+        
 
            return cell
     }
@@ -150,7 +158,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                    navigationController?.pushViewController(textViewcontroller, animated: true)
                }
            case 2:
-            
                // Секция UIView
                switch indexPath.row {
                case 0:
@@ -195,4 +202,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
 
 }
+
+
+
+
 

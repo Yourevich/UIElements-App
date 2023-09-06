@@ -29,3 +29,12 @@ enum ClassOfUI: CaseIterable {
        case UIScrollView
        case UIView
    }
+
+
+enum tabControllers {
+    
+    case Table
+    case Collection
+    
+
+}

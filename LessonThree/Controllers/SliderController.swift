@@ -8,8 +8,6 @@ import UIKit
 
 class SliderController: UIViewController {
     
-    //Тест для коммита
-    
     let slider = UISlider(frame: CGRect(x: 40, y: 200, width: 300, height: 100))
     var centerYAnchor: NSLayoutConstraint?
     
