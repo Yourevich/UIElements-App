@@ -16,11 +16,7 @@ class TextViewController: UIViewController {
         view.backgroundColor = .systemGray6
         setupTextView()
         
-        let font = UIFont.familyNames
-        for font in font {
-            
-            print(font)
-        }
+
        
     }
     
