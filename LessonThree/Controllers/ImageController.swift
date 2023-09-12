@@ -16,6 +16,8 @@ class ImageController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = UIColor.white
     setupImaveView()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIImageView"
     
         
     func setupImaveView() {

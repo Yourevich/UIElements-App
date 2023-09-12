@@ -18,6 +18,8 @@ class SegmentedControlController: UIViewController {
         view.backgroundColor = .white
         setupController()
         setupLabel()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UISegmentedControl"
     }
     
     

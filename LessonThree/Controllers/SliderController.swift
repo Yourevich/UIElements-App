@@ -13,9 +13,11 @@ class SliderController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupSlider()
         slider.addTarget(self, action: #selector(updPointOfSlide), for: .valueChanged)
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UISlider"
     }
     
     func setupSlider() {

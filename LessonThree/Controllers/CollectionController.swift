@@ -9,6 +9,8 @@ import UIKit
 
 class CollectionController: UIViewController {
     
+    let collectionView = UICollectionViewFlowLayout()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

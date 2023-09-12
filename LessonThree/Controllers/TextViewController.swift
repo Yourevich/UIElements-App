@@ -15,8 +15,8 @@ class TextViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
         setupTextView()
-        
-
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UITextView"
        
     }
     

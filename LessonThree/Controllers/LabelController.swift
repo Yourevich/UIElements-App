@@ -16,6 +16,8 @@ class LabelController: UIViewController {
         
         view.backgroundColor = .systemMint
         configLabel()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UILabel"
       
         
         // Setup for label

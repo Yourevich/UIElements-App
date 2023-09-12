@@ -14,8 +14,10 @@ class SwitchController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupSwitch()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UISwitch"
        
     }
     

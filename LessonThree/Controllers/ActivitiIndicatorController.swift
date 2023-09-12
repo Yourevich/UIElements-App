@@ -30,6 +30,8 @@ class ActivitiIndicatorController: UIViewController {
         view.backgroundColor = .systemGray6
         setupButton()
         setupIndicator()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIAcivityIndicator"
         
     }
     

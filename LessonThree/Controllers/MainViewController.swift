@@ -32,7 +32,7 @@ let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         
         //Config navig.title
-        navigationItem.title = "Table of UI elements"
+        navigationItem.title = "Table"
         navigationController?.navigationBar.prefersLargeTitles = true
         
     }
@@ -42,7 +42,6 @@ let searchController = UISearchController(searchResultsController: nil)
     func setupTableView() {
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.isScrollEnabled = true
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -80,6 +79,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.textAlignment = .left
         cell.accessoryType = .disclosureIndicator
+//        let mediumFont = UIFont.systemFont(ofSize: 16, weight: .semibold)
+//        cell.textLabel?.font = mediumFont
         
         switch indexPath.section {
            case 0:

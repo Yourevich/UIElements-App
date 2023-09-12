@@ -17,6 +17,8 @@ class TextFieldController: UIViewController {
 
         view.backgroundColor = .systemTeal
         setupTextField()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UITextField"
         
     }
     
