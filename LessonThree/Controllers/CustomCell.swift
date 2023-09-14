@@ -32,10 +32,20 @@ class CustomCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        customStackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(customStackView)
-        
+        configureStackView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with image: UIImage) {
+        customImageView.image = image
+    }
+    
+    private func configureStackView() {
+        customStackView.translatesAutoresizingMaskIntoConstraints = false
         customStackView.addArrangedSubview(customImageView)
         customStackView.addArrangedSubview(customLabel)
         
@@ -49,13 +59,5 @@ class CustomCell: UITableViewCell {
             customImageView.widthAnchor.constraint(equalToConstant: 30),
             customImageView.heightAnchor.constraint(equalToConstant: 30)
         ])
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func configure(with image: UIImage) {
-        customImageView.image = image
     }
 }
