@@ -14,7 +14,7 @@ class ImageController: UIViewController {
 
     override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.white
+    view.backgroundColor = UIColor.systemBackground
     setupImaveView()
         navigationItem.largeTitleDisplayMode = .never
         title = "UIImageView"
@@ -34,8 +34,6 @@ class ImageController: UIViewController {
         NSLayoutConstraint.activate([
             imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-//            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             imageView.heightAnchor.constraint(equalToConstant: 500),
             imageView.widthAnchor.constraint(equalToConstant: 300)
         ])}

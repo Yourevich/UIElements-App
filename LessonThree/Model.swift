@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 // Enum with value of all controllers
 
-enum TypeOfUi: CaseIterable {
+enum TypeOfUi: String, CaseIterable {
     
     case Button
     case Slider
@@ -23,18 +24,16 @@ enum TypeOfUi: CaseIterable {
 
 }
 
-enum ClassOfUI: CaseIterable {
+enum ClassOfUI: String, CaseIterable {
     
        case UIControl
        case UIScrollView
        case UIView
    }
 
+struct Section {
+        let type: ClassOfUI
+        let rows: [(type: TypeOfUi, controller: UIViewController)]
+    }
 
-enum tabControllers {
-    
-    case Table
-    case Collection
-    
 
-}

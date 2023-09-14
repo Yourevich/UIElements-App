@@ -15,7 +15,7 @@ class SegmentedControlController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupController()
         setupLabel()
         navigationItem.largeTitleDisplayMode = .never

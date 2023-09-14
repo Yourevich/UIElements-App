@@ -13,3 +13,11 @@ func hidesBar(_ controller: [UIViewController]) {
         controller.hidesBottomBarWhenPushed = false
     }
  }
+
+extension UIViewController {
+    func updateTitle(_ title: String) {
+        self.title = title
+    
+    }
+    
+}

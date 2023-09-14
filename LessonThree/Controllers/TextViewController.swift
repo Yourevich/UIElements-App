@@ -17,7 +17,6 @@ class TextViewController: UIViewController {
         setupTextView()
         navigationItem.largeTitleDisplayMode = .never
         title = "UITextView"
-       
     }
     
     // Setup of TextView
@@ -30,17 +29,16 @@ class TextViewController: UIViewController {
         textView.isEditable = false
         textView.isSelectable = false
         textView.contentInset = .zero
-       
-        
+
         view.addSubview(textView)
     
         
         NSLayoutConstraint.activate([
             textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                    textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                    textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                    textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-                ])
+            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
         
     }
 }
