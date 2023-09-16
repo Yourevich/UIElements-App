@@ -17,6 +17,8 @@ class TextFieldController: UIViewController {
 
         view.backgroundColor = .systemTeal
         setupTextField()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UITextField"
         
     }
     
@@ -31,7 +33,8 @@ class TextFieldController: UIViewController {
     
         NSLayoutConstraint.activate([
             textFieldOfNumber.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldOfNumber.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            textFieldOfNumber.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            textFieldOfNumber.widthAnchor.constraint(equalToConstant: 150)
 
         ])
         
@@ -44,6 +47,7 @@ class TextFieldController: UIViewController {
     
         NSLayoutConstraint.activate([
             textFieldOfPassword.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textFieldOfPassword.widthAnchor.constraint(equalToConstant: 150),
             textFieldOfPassword.topAnchor.constraint(equalTo: textFieldOfNumber.bottomAnchor,constant: 20)
 
         ])

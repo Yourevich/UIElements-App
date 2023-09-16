@@ -30,9 +30,10 @@ class ButtonController: UIViewController {
                 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        
+        view.backgroundColor = .systemBackground
         setupUI()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIButton"
     }
     
     

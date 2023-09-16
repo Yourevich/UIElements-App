@@ -15,9 +15,11 @@ class SegmentedControlController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupController()
         setupLabel()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UISegmentedControl"
     }
     
     
@@ -30,7 +32,8 @@ class SegmentedControlController: UIViewController {
        
         NSLayoutConstraint.activate([
             controller.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            controller.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            controller.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
         ])
         controller.addTarget(self, action: #selector(switchText), for: .valueChanged)
     }
@@ -43,9 +46,11 @@ class SegmentedControlController: UIViewController {
       
         NSLayoutConstraint.activate([
             label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 40),
+            label.bottomAnchor.constraint(equalTo: controller.topAnchor, constant: -20)
         ])
     }
+    
+    
     
     // Function setting action for segmented controll
     

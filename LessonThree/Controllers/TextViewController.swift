@@ -13,8 +13,10 @@ class TextViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
         setupTextView()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UITextView"
     }
     
     // Setup of TextView
@@ -26,16 +28,17 @@ class TextViewController: UIViewController {
         textView.text = "this text cannot be deleted or copied 👺"
         textView.isEditable = false
         textView.isSelectable = false
-        
+        textView.contentInset = .zero
+
         view.addSubview(textView)
     
         
         NSLayoutConstraint.activate([
-                    textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-                    textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                    textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-                    textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-                ])
+            textView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            textView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            textView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
         
     }
 }

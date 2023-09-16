@@ -27,9 +27,11 @@ class ActivitiIndicatorController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
         setupButton()
         setupIndicator()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIAcivityIndicator"
         
     }
     
@@ -56,7 +58,6 @@ class ActivitiIndicatorController: UIViewController {
         
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
             button.heightAnchor.constraint(equalToConstant: 40),
             button.widthAnchor.constraint(equalToConstant: 300)
