@@ -54,7 +54,8 @@ class MainViewController: UIViewController {
     
     // Create searchController
     
-    let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(searchResultsController: nil)
+    var filteredData: [Section] = []
     
     //Create instance for UI
     
@@ -64,13 +65,18 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemGray5
         view.addSubview(tableView)
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Введите название"
+        definesPresentationContext = true
         
         tableView.rowHeight = 50
-        //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         setupTableView()
+        setupSearchController()
+        filteredData = data
+        
         
         //Confifure search
         navigationItem.searchController = searchController
@@ -96,17 +102,29 @@ class MainViewController: UIViewController {
         ])
     }
     
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.autocapitalizationType = .none
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
+    }
+    
+    
 }
 // Extension for conforming protocols UITableView
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
+        return filteredData.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data[section].rows.count
+        return filteredData[section].rows.count
     }
     
     // Func of conforming protocol
@@ -119,11 +137,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.textAlignment = .left
         cell.accessoryType = .disclosureIndicator
         
-        let rowData = data[indexPath.section].rows[indexPath.row]
+        let rowData = filteredData[indexPath.section].rows[indexPath.row]
+        
         cell.customLabel.text = rowData.type.rawValue
         if let image = imageDictionary[rowData.type] {
             cell.configure(with: image)
         }
+        
+        
+        
+        
         return cell
     }
     
@@ -143,11 +166,30 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         data[section].type.rawValue
     }
     
+}
+
+extension MainViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            let lowercaseSearchText = searchText.lowercased()
+            
+            if !lowercaseSearchText.isEmpty {
+                filteredData = data.map { section in
+                    let filteredRows = section.rows.filter { $0.type.rawValue.lowercased().contains(lowercaseSearchText) }
+                    return Section(type: section.type, rows: filteredRows)
+                }.filter { !$0.rows.isEmpty }
+            } else {
+                filteredData = data
+            }
+        } else {
+            filteredData = data
+        }
+        tableView.reloadData()
+    }
     
     
 }
-
-
 
 
 

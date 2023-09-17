@@ -11,13 +11,5 @@ class CollectionController: UIViewController {
     
     let collectionView = UICollectionViewFlowLayout()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = UIColor.systemGray6
-        
-
-        
-    }
-    
+   
 }

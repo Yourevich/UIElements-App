@@ -5,7 +5,7 @@
 //  Created by Илья Зорин on 05.09.2023.
 //
 
-import Foundation
+
 import UIKit
 
 func hidesBar(_ controller: [UIViewController]) {

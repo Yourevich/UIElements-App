@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D178BB02AAA58BE005610DB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D178BAF2AAA58BE005610DB /* CustomCell.swift */; };
 		4D1CBA002A95418500BA6DD4 /* SwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CB9FF2A95418500BA6DD4 /* SwitchController.swift */; };
 		4D1CBA022A959C7000BA6DD4 /* LabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA012A959C7000BA6DD4 /* LabelController.swift */; };
 		4D1CBA082A96A7F900BA6DD4 /* SF-Pro-Display-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D1CBA072A96A7F900BA6DD4 /* SF-Pro-Display-BlackItalic.otf */; };
@@ -23,9 +24,13 @@
 		4D7C9B812A9460BE001540FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C9B802A9460BE001540FF /* MainViewController.swift */; };
 		4D7C9B842A94EB60001540FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C9B832A94EB60001540FF /* Model.swift */; };
 		4D7C9B872A951AAA001540FF /* SliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C9B862A951AAA001540FF /* SliderController.swift */; };
+		4D9D12782AA778B3001E0149 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D12772AA778B3001E0149 /* MainTabBarController.swift */; };
+		4D9D127B2AA77954001E0149 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D127A2AA77954001E0149 /* CollectionController.swift */; };
+		4D9D127D2AA78512001E0149 /* UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D127C2AA78512001E0149 /* UIConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D178BAF2AAA58BE005610DB /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		4D1CB9FF2A95418500BA6DD4 /* SwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchController.swift; sourceTree = "<group>"; };
 		4D1CBA012A959C7000BA6DD4 /* LabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelController.swift; sourceTree = "<group>"; };
 		4D1CBA072A96A7F900BA6DD4 /* SF-Pro-Display-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BlackItalic.otf"; sourceTree = "<group>"; };
@@ -44,6 +49,9 @@
 		4D7C9B802A9460BE001540FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4D7C9B832A94EB60001540FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4D7C9B862A951AAA001540FF /* SliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderController.swift; sourceTree = "<group>"; };
+		4D9D12772AA778B3001E0149 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		4D9D127A2AA77954001E0149 /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
+		4D9D127C2AA78512001E0149 /* UIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +97,10 @@
 				4D35B6C22A90B2E10043A33A /* SceneDelegate.swift */,
 				4D7C9B822A9460DB001540FF /* Controllers */,
 				4D35B6C92A90B2E30043A33A /* Assets.xcassets */,
+				4D9D127C2AA78512001E0149 /* UIConfiguration.swift */,
 				4D7C9B852A94EB6C001540FF /* Model */,
 				4D35B6CB2A90B2E30043A33A /* LaunchScreen.storyboard */,
+				4D9D12792AA778BE001E0149 /* TabBarControllers */,
 				4D35B6CE2A90B2E30043A33A /* Info.plist */,
 			);
 			path = LessonThree;
@@ -109,6 +119,8 @@
 				4D7C9B862A951AAA001540FF /* SliderController.swift */,
 				4D35B6C42A90B2E10043A33A /* ButtonController.swift */,
 				4D7C9B802A9460BE001540FF /* MainViewController.swift */,
+				4D178BAF2AAA58BE005610DB /* CustomCell.swift */,
+				4D9D127A2AA77954001E0149 /* CollectionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,6 +131,14 @@
 				4D7C9B832A94EB60001540FF /* Model.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		4D9D12792AA778BE001E0149 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4D9D12772AA778B3001E0149 /* MainTabBarController.swift */,
+			);
+			path = TabBarControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,16 +214,20 @@
 			files = (
 				4D1CBA0C2A97058700BA6DD4 /* ActivitiIndicatorController.swift in Sources */,
 				4D7C9B812A9460BE001540FF /* MainViewController.swift in Sources */,
+				4D178BB02AAA58BE005610DB /* CustomCell.swift in Sources */,
 				4D7C9B842A94EB60001540FF /* Model.swift in Sources */,
 				4D35B6C52A90B2E10043A33A /* ButtonController.swift in Sources */,
 				4D1CBA022A959C7000BA6DD4 /* LabelController.swift in Sources */,
 				4D35B6C12A90B2E10043A33A /* AppDelegate.swift in Sources */,
+				4D9D127D2AA78512001E0149 /* UIConfiguration.swift in Sources */,
 				4D1CBA0A2A96B07000BA6DD4 /* ImageController.swift in Sources */,
 				4D1CBA002A95418500BA6DD4 /* SwitchController.swift in Sources */,
 				4D7C9B872A951AAA001540FF /* SliderController.swift in Sources */,
+				4D9D12782AA778B3001E0149 /* MainTabBarController.swift in Sources */,
 				4D1CBA102A97A72600BA6DD4 /* TextFieldController.swift in Sources */,
 				4D35B6C32A90B2E10043A33A /* SceneDelegate.swift in Sources */,
 				4D1CBA0E2A970B6A00BA6DD4 /* SegmentedControlController.swift in Sources */,
+				4D9D127B2AA77954001E0149 /* CollectionController.swift in Sources */,
 				4D1CBA122A97AFB100BA6DD4 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
