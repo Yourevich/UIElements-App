@@ -11,7 +11,7 @@ class MainViewController: UIViewController {
     
     let data = [
         Section(
-            
+
             type: .UIControl,
             rows: [
                 (.Button, ButtonController()),
@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
                 (.UISegmentedControl, SegmentedControlController()),
                 (.UITextField, TextFieldController())
             ]
-            
+
         ),
         Section(
             type: .UIScrollView,
@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
                 (.UIImageView, ImageController()),
                 (.UIActivityIndicatorView, ActivitiIndicatorController())
             ]
-            
+
         )
     ]
     
@@ -70,7 +70,7 @@ class MainViewController: UIViewController {
         definesPresentationContext = true
         
         tableView.rowHeight = 50
-        tableView.register(CustomCell.self, forCellReuseIdentifier: CustomCell.reuseIdentifier)
+        tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         setupTableView()
@@ -131,7 +131,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseIdentifier, for: indexPath) as? CustomCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.reuseIdentifier, for: indexPath) as? CustomTableViewCell else {
             fatalError("Failed to dequeue CustomTableViewCell")
         }
         cell.textLabel?.textAlignment = .left
@@ -154,8 +154,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let controller = data[indexPath.section].rows[indexPath.row].controller
-        navigationController?.pushViewController(controller, animated: true)
+        let rowData = filteredData[indexPath.section].rows[indexPath.row]
+           if let sectionIndex = data.firstIndex(where: { $0.type == filteredData[indexPath.section].type }),
+              let rowIndex = data[sectionIndex].rows.firstIndex(where: { $0.type == rowData.type }) {
+               let controller = data[sectionIndex].rows[rowIndex].controller
+               navigationController?.pushViewController(controller, animated: true)
+           }
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
@@ -173,7 +177,7 @@ extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
             let lowercaseSearchText = searchText.lowercased()
-            
+
             if !lowercaseSearchText.isEmpty {
                 filteredData = data.map { section in
                     let filteredRows = section.rows.filter { $0.type.rawValue.lowercased().contains(lowercaseSearchText) }
@@ -186,9 +190,9 @@ extension MainViewController: UISearchResultsUpdating {
             filteredData = data
         }
         tableView.reloadData()
+        
     }
-    
-    
+
 }
 
 
