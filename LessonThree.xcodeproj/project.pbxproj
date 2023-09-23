@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D178BB02AAA58BE005610DB /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D178BAF2AAA58BE005610DB /* CustomCell.swift */; };
+		4D178BB02AAA58BE005610DB /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D178BAF2AAA58BE005610DB /* CustomTableViewCell.swift */; };
 		4D1CBA002A95418500BA6DD4 /* SwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CB9FF2A95418500BA6DD4 /* SwitchController.swift */; };
 		4D1CBA022A959C7000BA6DD4 /* LabelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CBA012A959C7000BA6DD4 /* LabelController.swift */; };
 		4D1CBA082A96A7F900BA6DD4 /* SF-Pro-Display-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4D1CBA072A96A7F900BA6DD4 /* SF-Pro-Display-BlackItalic.otf */; };
@@ -21,16 +21,20 @@
 		4D35B6C52A90B2E10043A33A /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35B6C42A90B2E10043A33A /* ButtonController.swift */; };
 		4D35B6CA2A90B2E30043A33A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D35B6C92A90B2E30043A33A /* Assets.xcassets */; };
 		4D35B6CD2A90B2E30043A33A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D35B6CB2A90B2E30043A33A /* LaunchScreen.storyboard */; };
+		4D524DEE2AB6F1D20072FE40 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D524DED2AB6F1D20072FE40 /* CustomCollectionViewCell.swift */; };
 		4D7C9B812A9460BE001540FF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C9B802A9460BE001540FF /* MainViewController.swift */; };
 		4D7C9B842A94EB60001540FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C9B832A94EB60001540FF /* Model.swift */; };
 		4D7C9B872A951AAA001540FF /* SliderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7C9B862A951AAA001540FF /* SliderController.swift */; };
 		4D9D12782AA778B3001E0149 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D12772AA778B3001E0149 /* MainTabBarController.swift */; };
 		4D9D127B2AA77954001E0149 /* CollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D127A2AA77954001E0149 /* CollectionController.swift */; };
 		4D9D127D2AA78512001E0149 /* UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9D127C2AA78512001E0149 /* UIConfiguration.swift */; };
+		4DC5017A2ABEA2F900D4BBFE /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC501792ABEA2F900D4BBFE /* DatePickerController.swift */; };
+		4DC5017C2ABED4F200D4BBFE /* StepperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5017B2ABED4F200D4BBFE /* StepperController.swift */; };
+		4DC5017E2ABEF10700D4BBFE /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5017D2ABEF10700D4BBFE /* StackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D178BAF2AAA58BE005610DB /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		4D178BAF2AAA58BE005610DB /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		4D1CB9FF2A95418500BA6DD4 /* SwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchController.swift; sourceTree = "<group>"; };
 		4D1CBA012A959C7000BA6DD4 /* LabelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelController.swift; sourceTree = "<group>"; };
 		4D1CBA072A96A7F900BA6DD4 /* SF-Pro-Display-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-BlackItalic.otf"; sourceTree = "<group>"; };
@@ -46,12 +50,16 @@
 		4D35B6C92A90B2E30043A33A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D35B6CC2A90B2E30043A33A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D35B6CE2A90B2E30043A33A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D524DED2AB6F1D20072FE40 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		4D7C9B802A9460BE001540FF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4D7C9B832A94EB60001540FF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		4D7C9B862A951AAA001540FF /* SliderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderController.swift; sourceTree = "<group>"; };
 		4D9D12772AA778B3001E0149 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4D9D127A2AA77954001E0149 /* CollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionController.swift; sourceTree = "<group>"; };
 		4D9D127C2AA78512001E0149 /* UIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConfiguration.swift; sourceTree = "<group>"; };
+		4DC501792ABEA2F900D4BBFE /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
+		4DC5017B2ABED4F200D4BBFE /* StepperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperController.swift; sourceTree = "<group>"; };
+		4DC5017D2ABEF10700D4BBFE /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 			children = (
 				4D35B6C02A90B2E10043A33A /* AppDelegate.swift */,
 				4D35B6C22A90B2E10043A33A /* SceneDelegate.swift */,
+				4D524DEF2AB6F1FA0072FE40 /* ViewsOfCell */,
 				4D7C9B822A9460DB001540FF /* Controllers */,
 				4D35B6C92A90B2E30043A33A /* Assets.xcassets */,
 				4D9D127C2AA78512001E0149 /* UIConfiguration.swift */,
@@ -106,6 +115,15 @@
 			path = LessonThree;
 			sourceTree = "<group>";
 		};
+		4D524DEF2AB6F1FA0072FE40 /* ViewsOfCell */ = {
+			isa = PBXGroup;
+			children = (
+				4D178BAF2AAA58BE005610DB /* CustomTableViewCell.swift */,
+				4D524DED2AB6F1D20072FE40 /* CustomCollectionViewCell.swift */,
+			);
+			path = ViewsOfCell;
+			sourceTree = "<group>";
+		};
 		4D7C9B822A9460DB001540FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +132,14 @@
 				4D1CBA0D2A970B6A00BA6DD4 /* SegmentedControlController.swift */,
 				4D1CBA0B2A97058700BA6DD4 /* ActivitiIndicatorController.swift */,
 				4D1CBA092A96B07000BA6DD4 /* ImageController.swift */,
+				4DC501792ABEA2F900D4BBFE /* DatePickerController.swift */,
+				4DC5017B2ABED4F200D4BBFE /* StepperController.swift */,
 				4D1CBA012A959C7000BA6DD4 /* LabelController.swift */,
 				4D1CB9FF2A95418500BA6DD4 /* SwitchController.swift */,
+				4DC5017D2ABEF10700D4BBFE /* StackViewController.swift */,
 				4D7C9B862A951AAA001540FF /* SliderController.swift */,
 				4D35B6C42A90B2E10043A33A /* ButtonController.swift */,
 				4D7C9B802A9460BE001540FF /* MainViewController.swift */,
-				4D178BAF2AAA58BE005610DB /* CustomCell.swift */,
 				4D9D127A2AA77954001E0149 /* CollectionController.swift */,
 			);
 			path = Controllers;
@@ -214,19 +234,23 @@
 			files = (
 				4D1CBA0C2A97058700BA6DD4 /* ActivitiIndicatorController.swift in Sources */,
 				4D7C9B812A9460BE001540FF /* MainViewController.swift in Sources */,
-				4D178BB02AAA58BE005610DB /* CustomCell.swift in Sources */,
+				4D178BB02AAA58BE005610DB /* CustomTableViewCell.swift in Sources */,
+				4DC5017E2ABEF10700D4BBFE /* StackViewController.swift in Sources */,
 				4D7C9B842A94EB60001540FF /* Model.swift in Sources */,
 				4D35B6C52A90B2E10043A33A /* ButtonController.swift in Sources */,
 				4D1CBA022A959C7000BA6DD4 /* LabelController.swift in Sources */,
 				4D35B6C12A90B2E10043A33A /* AppDelegate.swift in Sources */,
 				4D9D127D2AA78512001E0149 /* UIConfiguration.swift in Sources */,
+				4D524DEE2AB6F1D20072FE40 /* CustomCollectionViewCell.swift in Sources */,
 				4D1CBA0A2A96B07000BA6DD4 /* ImageController.swift in Sources */,
 				4D1CBA002A95418500BA6DD4 /* SwitchController.swift in Sources */,
 				4D7C9B872A951AAA001540FF /* SliderController.swift in Sources */,
 				4D9D12782AA778B3001E0149 /* MainTabBarController.swift in Sources */,
+				4DC5017C2ABED4F200D4BBFE /* StepperController.swift in Sources */,
 				4D1CBA102A97A72600BA6DD4 /* TextFieldController.swift in Sources */,
 				4D35B6C32A90B2E10043A33A /* SceneDelegate.swift in Sources */,
 				4D1CBA0E2A970B6A00BA6DD4 /* SegmentedControlController.swift in Sources */,
+				4DC5017A2ABEA2F900D4BBFE /* DatePickerController.swift in Sources */,
 				4D9D127B2AA77954001E0149 /* CollectionController.swift in Sources */,
 				4D1CBA122A97AFB100BA6DD4 /* TextViewController.swift in Sources */,
 			);

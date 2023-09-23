@@ -11,16 +11,18 @@ class MainViewController: UIViewController {
     
     let data = [
         Section(
-
+            
             type: .UIControl,
             rows: [
                 (.Button, ButtonController()),
                 (.Slider, SliderController()),
                 (.Switch, SwitchController()),
                 (.UISegmentedControl, SegmentedControlController()),
-                (.UITextField, TextFieldController())
+                (.UITextField, TextFieldController()),
+                (.UIDatePicker, DatePickerController()),
+                (.UIStepper, StepperController())
             ]
-
+            
         ),
         Section(
             type: .UIScrollView,
@@ -33,9 +35,10 @@ class MainViewController: UIViewController {
             rows: [
                 (.UILabel, LabelController()),
                 (.UIImageView, ImageController()),
-                (.UIActivityIndicatorView, ActivitiIndicatorController())
+                (.UIActivityIndicatorView, ActivitiIndicatorController()),
+                (.UIStackView, StackViewController())
             ]
-
+            
         )
     ]
     
@@ -48,7 +51,10 @@ class MainViewController: UIViewController {
         .UISegmentedControl: UIImage(systemName: "chart.bar")!,
         .Button: UIImage(systemName: "button.programmable")!,
         .Switch: UIImage(systemName: "switch.2")!,
-        .UITextField: UIImage(systemName: "character.cursor.ibeam")!
+        .UITextField: UIImage(systemName: "character.cursor.ibeam")!,
+        .UIDatePicker: UIImage(systemName: "calendar")!,
+        .UIStepper: UIImage(systemName: "plus.square.fill.on.square.fill")!,
+        .UIStackView: UIImage(systemName: "square.stack.3d.down.forward.fill")!
         
     ]
     
@@ -144,9 +150,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(with: image)
         }
         
-        
-        
-        
         return cell
     }
     
@@ -155,11 +158,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let rowData = filteredData[indexPath.section].rows[indexPath.row]
-           if let sectionIndex = data.firstIndex(where: { $0.type == filteredData[indexPath.section].type }),
-              let rowIndex = data[sectionIndex].rows.firstIndex(where: { $0.type == rowData.type }) {
-               let controller = data[sectionIndex].rows[rowIndex].controller
-               navigationController?.pushViewController(controller, animated: true)
-           }
+        if let sectionIndex = data.firstIndex(where: { $0.type == filteredData[indexPath.section].type }),
+           let rowIndex = data[sectionIndex].rows.firstIndex(where: { $0.type == rowData.type }) {
+            let controller = data[sectionIndex].rows[rowIndex].controller
+            navigationController?.pushViewController(controller, animated: true)
+        }
         
         tableView.deselectRow(at: indexPath, animated: false)
     }
@@ -177,7 +180,7 @@ extension MainViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         if let searchText = searchController.searchBar.text {
             let lowercaseSearchText = searchText.lowercased()
-
+            
             if !lowercaseSearchText.isEmpty {
                 filteredData = data.map { section in
                     let filteredRows = section.rows.filter { $0.type.rawValue.lowercased().contains(lowercaseSearchText) }
@@ -192,7 +195,7 @@ extension MainViewController: UISearchResultsUpdating {
         tableView.reloadData()
         
     }
-
+    
 }
 
 
