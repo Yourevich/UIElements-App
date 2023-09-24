@@ -31,6 +31,7 @@
 		4DC5017A2ABEA2F900D4BBFE /* DatePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC501792ABEA2F900D4BBFE /* DatePickerController.swift */; };
 		4DC5017C2ABED4F200D4BBFE /* StepperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5017B2ABED4F200D4BBFE /* StepperController.swift */; };
 		4DC5017E2ABEF10700D4BBFE /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5017D2ABEF10700D4BBFE /* StackViewController.swift */; };
+		4DC501802ABF663E00D4BBFE /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC5017F2ABF663E00D4BBFE /* SectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		4DC501792ABEA2F900D4BBFE /* DatePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerController.swift; sourceTree = "<group>"; };
 		4DC5017B2ABED4F200D4BBFE /* StepperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperController.swift; sourceTree = "<group>"; };
 		4DC5017D2ABEF10700D4BBFE /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
+		4DC5017F2ABF663E00D4BBFE /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				4D178BAF2AAA58BE005610DB /* CustomTableViewCell.swift */,
 				4D524DED2AB6F1D20072FE40 /* CustomCollectionViewCell.swift */,
+				4DC5017F2ABF663E00D4BBFE /* SectionHeaderView.swift */,
 			);
 			path = ViewsOfCell;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				4D9D127D2AA78512001E0149 /* UIConfiguration.swift in Sources */,
 				4D524DEE2AB6F1D20072FE40 /* CustomCollectionViewCell.swift in Sources */,
 				4D1CBA0A2A96B07000BA6DD4 /* ImageController.swift in Sources */,
+				4DC501802ABF663E00D4BBFE /* SectionHeaderView.swift in Sources */,
 				4D1CBA002A95418500BA6DD4 /* SwitchController.swift in Sources */,
 				4D7C9B872A951AAA001540FF /* SliderController.swift in Sources */,
 				4D9D12782AA778B3001E0149 /* MainTabBarController.swift in Sources */,

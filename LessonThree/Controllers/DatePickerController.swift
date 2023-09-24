@@ -9,7 +9,7 @@ import UIKit
 
 class DatePickerController: UIViewController {
     
-     private lazy var textField: UITextField = {
+    private lazy var textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.borderStyle = .roundedRect
@@ -18,7 +18,7 @@ class DatePickerController: UIViewController {
         return textField
     }()
     
-     private lazy var datePicker: UIDatePicker = {
+    private lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
         picker.translatesAutoresizingMaskIntoConstraints = false
         picker.datePickerMode = .date
@@ -29,6 +29,8 @@ class DatePickerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIDatePicker"
         view.backgroundColor = UIColor.systemGray5
         view.addSubview(textField)
         setupField()

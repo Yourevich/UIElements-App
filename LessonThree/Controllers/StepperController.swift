@@ -28,6 +28,8 @@ class StepperController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIStepper"
         view.addSubview(stepper)
         view.addSubview(label)
         view.backgroundColor = UIColor.systemGray5

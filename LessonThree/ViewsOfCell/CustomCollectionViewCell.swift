@@ -10,7 +10,7 @@ import UIKit
 class CustomCollectionViewCell: UICollectionViewCell {
     static let reuseIdentifier = "CustomCollectionCell"
     
-    let containerView = UIView() // UIView в качестве контейнера
+    let containerView = UIView()
     
     lazy var customImageView: UIImageView = {
         let imageView = UIImageView()
@@ -34,19 +34,17 @@ class CustomCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        addSubview(containerView) // Добавляем контейнер в ячейку
-        containerView.addSubview(customImageView) // Добавляем изображение на контейнер
-        containerView.addSubview(customLabel) // Добавляем текст на контейнер
+        addSubview(containerView)
+        containerView.addSubview(customImageView)
+        containerView.addSubview(customLabel)
+        configureConstraints()
         
-        configureConstraints() // Настроим ограничения
-        
-        // Применяем тень к контейнеру
         containerView.backgroundColor = UIColor.systemGray6
         containerView.layer.cornerRadius = 10
         containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        containerView.layer.shadowRadius = 2
-        containerView.layer.shadowOpacity = 0.2
+        containerView.layer.shadowRadius = 1
+        containerView.layer.shadowOpacity = 0.1
         containerView.layer.masksToBounds = false
     }
     
@@ -64,19 +62,19 @@ class CustomCollectionViewCell: UICollectionViewCell {
         customLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            // Ограничения для контейнера
+            
             containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             containerView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             containerView.topAnchor.constraint(equalTo: topAnchor, constant: 8),
             containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8),
             
-            // Ограничения для изображения
+            
             customImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
             customImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             customImageView.widthAnchor.constraint(equalToConstant: 30),
             customImageView.heightAnchor.constraint(equalToConstant: 30),
             
-            // Ограничения для текста
+            
             customLabel.leadingAnchor.constraint(equalTo: customImageView.trailingAnchor, constant: 16),
             customLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
             customLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor)

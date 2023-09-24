@@ -22,14 +22,16 @@ class StackViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
+        title = "UIStackView"
         view.backgroundColor = .systemGray6
         view.addSubview(stackView)
         configureStackView()
         
         for _ in 0...2 {
-            let newView = UIView() // Создание новой вью
-            configureView(someView: newView) // Передача созданной вью в функцию configureView
-            views.append(newView) // Добавление вью в массив
+            let newView = UIView()
+            configureView(someView: newView)
+            views.append(newView)
             stackView.addArrangedSubview(newView)
         }
         
