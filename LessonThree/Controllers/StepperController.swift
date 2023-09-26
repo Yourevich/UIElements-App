@@ -11,12 +11,15 @@ class StepperController: UIViewController {
     
     var score: Int = 0
     
+    
     private lazy var stepper: UIStepper = {
         let stepper = UIStepper()
         stepper.translatesAutoresizingMaskIntoConstraints = false
+        stepper.minimumValue = 0
+        stepper.maximumValue = 20
+        stepper.stepValue = 1
         return stepper
     }()
-    
     
     private lazy var label: UILabel = {
         let label = UILabel()
@@ -56,18 +59,11 @@ class StepperController: UIViewController {
     }
     
     
-    @objc func updateScore() {
+    @objc func updateScore(_ stepper: UIStepper) {
         
-        if stepper.value > stepper.minimumValue {
-            score += 1
-        } else {
-            score = max(score - 1, 0)
-        }
-        label.text = String(score)
-        
+        score = Int(stepper.value)
+        label.text = "\(score)"
         
     }
-    
-    
     
 }
