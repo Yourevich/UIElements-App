@@ -18,7 +18,7 @@ class LabelController: UIViewController {
         configLabel()
         navigationItem.largeTitleDisplayMode = .never
         title = "UILabel"
-      
+        
         
         // Setup for label
         

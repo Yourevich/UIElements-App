@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class CustomCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
     static let reuseIdentifier = "CustomCell"
     
     let customStackView = UIStackView()

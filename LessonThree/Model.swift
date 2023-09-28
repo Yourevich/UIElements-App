@@ -21,6 +21,9 @@ enum TypeOfUi: String, CaseIterable {
     case UITextField
     case UITextView
     case UISegmentedControl
+    case UIDatePicker
+    case UIStepper
+    case UIStackView
 
 }
 

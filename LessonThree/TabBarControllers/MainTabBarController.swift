@@ -17,7 +17,8 @@ class MainTabBarController: UITabBarController {
         let tableController = MainViewController()
         let tableNavigationContoller = UINavigationController(rootViewController: tableController)
         
-        let collectionController = CollectionController()
+        let collectionController = CollectionViewController()
+        let collectionNavigationController = UINavigationController(rootViewController: collectionController)
         
         
         //Setup bar items
@@ -26,7 +27,7 @@ class MainTabBarController: UITabBarController {
         
     
         //Append controllers in array tabbarcontrollers
-        viewControllers = [tableNavigationContoller, collectionController]
+        viewControllers = [tableNavigationContoller, collectionNavigationController]
         
     }
 
