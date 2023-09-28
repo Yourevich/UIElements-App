@@ -9,7 +9,7 @@ import UIKit
 
 class StackViewController: UIViewController {
     
-    var views: [UIView] = [] // Изменил "let" на "var", чтобы массив можно было изменять
+    var views: [UIView] = []
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
@@ -45,11 +45,12 @@ class StackViewController: UIViewController {
         }
     }
     
-    
     private func configureStackView() {
         NSLayoutConstraint.activate([
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant:  -20)
+            
         ])
         
     }
@@ -59,7 +60,6 @@ class StackViewController: UIViewController {
         someView.translatesAutoresizingMaskIntoConstraints  = false
         
         NSLayoutConstraint.activate([
-            someView.widthAnchor.constraint(equalToConstant: 100),
             someView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
